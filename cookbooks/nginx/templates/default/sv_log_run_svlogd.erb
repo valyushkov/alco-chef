@@ -1,0 +1,9 @@
+#!/bin/bash
+
+LOG_FOLDER=/var/log/nginx/daemon
+if [ -d /storage ]; then
+  LOG_FOLDER=/storage/log/nginx/daemon
+fi
+
+mkdir -p $LOG_FOLDER
+exec svlogd -tt $LOG_FOLDER

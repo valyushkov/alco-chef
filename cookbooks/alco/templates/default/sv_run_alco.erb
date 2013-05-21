@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+#
+APP_ROOT=<%= node[:alco][:app_root] %>
+APP_USER=<%= node[:alco][:user] %>
+APP_GROUP=<%= node[:alco][:group] %>
+CMD="coffee server.coffee"
+
+cd ${APP_ROOT}/current/
+
+# Run
+exec 2>&1
+echo "Starting alco..."
+exec chpst -u "${APP_USER}:${APP_GROUP}" $CMD

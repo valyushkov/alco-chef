@@ -1,0 +1,9 @@
+{
+  "run_list":
+    [
+      "recipe[mongodb]",
+      "recipe[runit]",
+      "recipe[nginx]",
+      "recipe[alco]"
+    ]
+}

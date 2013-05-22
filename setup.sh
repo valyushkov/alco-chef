@@ -38,7 +38,7 @@ if [ -z $ALCO_USER ]; then
 fi
 if [ -z $ALCO_GROUP ]; then
   echo "ACLO_GROUP is not set, using default settings"
-  ALCO_GROUP='development'
+  ALCO_GROUP='developers'
 fi
 if [ -z $ALCO_PASSWD ]; then
   echo "ALCO_PASSWD is not set, using default settings"

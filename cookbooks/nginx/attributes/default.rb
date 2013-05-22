@@ -6,10 +6,8 @@ default[:nginx][:worker_processes] = "4"
 default[:nginx][:worker_rlimit_nofile] = "8192"
 default[:nginx][:worker_connections] = "8192"
 
-default[:nginx][:status_port] = "11311"
-
 default[:nginx][:depends][:packages] = {
-  "nginx-runit" => nil
+  "nginx" => nil
 }
 
 default[:nginx][:new_vhost] = {}

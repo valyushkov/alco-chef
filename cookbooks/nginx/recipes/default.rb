@@ -22,18 +22,6 @@ template "/etc/nginx/nginx.conf" do
   mode  "0644"
 end
 
-template "/etc/nginx/sites-available/status.conf" do
-  source "status.conf.erb"
-  owner "root"
-  group "root"
-  mode "0644"
-end
-
-link "/etc/nginx/sites-enabled/status" do
-  to "/etc/nginx/sites-available/status.conf"
-  action :create
-end
-
 runit_service "nginx" do
   action :add
   run_script_template "sv_run.erb"
@@ -41,7 +29,7 @@ runit_service "nginx" do
   options = Mash.new
 end
 
-link "/etc/nginx/sites-enables/default" do
+link "/etc/nginx/sites-enabled/default" do
   action :delete
 end
 

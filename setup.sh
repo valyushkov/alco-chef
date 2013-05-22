@@ -78,7 +78,7 @@ apt-get -y --force-yes install $PACKAGES -o DPkg::Options::="--force-confold"
 logger "INFO" "Install rvm"
 curl -L $RVM_URI | bash -s stable
 
-. /usr/local/rvm/scripts/rvm
+source /etc/profile.d/rvm.sh
 rvm install ruby-1.9.3-p194
 rvm use ruby-1.9.3-p194 --default
 
